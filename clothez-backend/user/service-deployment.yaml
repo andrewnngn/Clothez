@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: user-service-deployment
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: user-service
+  template: 
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: user
+          image: docker.io/doanhthuc/user-service
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 3004
+          command: ["/bin/sh","-c"]
+          args: ["yarn typeorm migration:run -d ./src/data-source.ts && yarn start"]
+          env:
+          - name: NODE_ENV
+            value: production
+          - name: DATABASE_URL
+            value: postgres://postgres:1@user-db:5432/fu-capstone-user
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: user-service
+spec: 
+  selector:
+    app: user-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3004
+      targetPort: 3004
+  type: ClusterIP

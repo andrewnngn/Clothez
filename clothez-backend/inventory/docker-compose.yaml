@@ -1,0 +1,30 @@
+version: '3'
+services:
+  inventory:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: inventory
+    ports:
+      - 3002:3002
+    environment:
+      PORT: 3002
+      NODE_ENV: production
+      DATABASE_URL: postgres://postgres:1@postgres:5432/fu-capstone-inventory
+    working_dir: /usr/src/app
+    command: sh -c "yarn typeorm migration:run -d ./src/data-source.ts && yarn start"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    ports: 
+      - '5432:5432'
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: fu-capstone-inventory
+    volumes:
+      # - ./inventory/db-data:/var/lib/postgresql/data
+      - inventory-postgres-data:/var/lib/postgresql/data
+volumes:
+  inventory-postgres-data:

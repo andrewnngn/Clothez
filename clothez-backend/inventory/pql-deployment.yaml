@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-db-deployment # Sets Deployment name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventory-db-postgres
+  template:
+    metadata:
+      labels:
+        app: inventory-db-postgres
+    spec:
+      containers:
+      - name: postgres
+        image: docker.io/postgres # Sets Image
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5432 # Exposes container port
+        # envFrom:
+        #   - configMapRef:
+        #       name: postgres-config
+        env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: "1"
+        - name: POSTGRES_DB
+          value: fu-capstone-inventory
+        volumeMounts:
+          - mountPath: /var/lib/postgresql/data
+            name: postgres-data
+            subPath: postgres
+      volumes:
+        - name: postgres-data
+          persistentVolumeClaim:
+            claimName: inventory-db-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-db # Sets service name
+  labels:
+    app: inventory-db-postgres # Labels and Selectors
+spec:
+  selector:
+    app: inventory-db-postgres
+  ports:
+    - port: 5432 # Sets port to run the postgres application
+      targetPort: 5432
+  type: ClusterIP # Sets service type 

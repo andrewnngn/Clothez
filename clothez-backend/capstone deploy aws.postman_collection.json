@@ -1,0 +1,1464 @@
+{
+	"info": {
+		"_postman_id": "a686224a-45d7-43c5-9c67-7a7a09091179",
+		"name": "capstone deploy aws",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "inventory",
+			"item": [
+				{
+					"name": "size",
+					"item": [
+						{
+							"name": "GetAllSize",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/size/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"size",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetSizeByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/size/M",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"size",
+										"M"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateSize",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"l\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/inventory/size",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteSize",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/size/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"size",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "color",
+					"item": [
+						{
+							"name": "GetAllColor",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/color/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"color",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetColorByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/color/red",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"color",
+										"red"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateColor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"grey\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/inventory/color",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"color"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteColor",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/color/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"color",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "productVariant",
+					"item": [
+						{
+							"name": "GetAllProductVariant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/productVariant/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"productVariant",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductVariantById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/productVariant/8cec0b41-0ea7-4134-a8db-ed0c065b7367",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"productVariant",
+										"8cec0b41-0ea7-4134-a8db-ed0c065b7367"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateProductVariant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"63b990748083e160bc5dee9c\",\r\n    \"color\": \"red\",\r\n    \"size\": \"S\",\r\n    \"quantity\": 90,\r\n    \"basePrice\": 1000,\r\n    \"sellingPrice\": 1000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/inventory/productVariant",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"productVariant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeletelProductVariant",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/productVariant/123",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"productVariant",
+										"123"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateProductVariant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"p4566\",\r\n    \"color\": \"blue\",\r\n    \"size\": \"S\",\r\n    \"quantity\": 120,\r\n    \"basePrice\": 1000,\r\n    \"sellingPrice\": 900\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/inventory/productVariant/5afe847d-4b2f-439d-8154-5dfaf530c115",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"productVariant",
+										"5afe847d-4b2f-439d-8154-5dfaf530c115"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetStockQuantityByProductIdAndColorAndSize",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/productVariant/stock?productId=63e07f32733f637975df14f7&colorName=black&sizeName=S",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"productVariant",
+										"stock"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "63e07f32733f637975df14f7"
+										},
+										{
+											"key": "colorName",
+											"value": "black"
+										},
+										{
+											"key": "sizeName",
+											"value": "S"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductVariantsByProductId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/inventory/getProductVariantByProductId/p123122452",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"inventory",
+										"getProductVariantByProductId",
+										"p123122452"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "GetAllOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/order/all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"order",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/order/362e55da-38aa-492d-85e9-6dab02a603c0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"order",
+								"362e55da-38aa-492d-85e9-6dab02a603c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"u123\",\r\n    \"firstName\": \"Thuc\",\r\n    \"lastName\": \"Doanh\",\r\n    \"companyName\": \"fsoft\",\r\n    \"country\": \"Vietnam\",\r\n    \"streetAddress\": \"02 Wall st\",\r\n    \"city\": \"Danang\",\r\n    \"state\": \"\",\r\n    \"zipCode\": \"5555000\",\r\n    \"phone\": \"090123456789\",\r\n    \"deliveryFee\": 1.23,\r\n    \"paymentMethod\": \"COD\",\r\n    \"orderItemDTOList\": [\r\n        {\r\n            \"productId\": \"63e07f32733f637975df14f7\",\r\n            \"productName\": \"ao nam 1\",\r\n            \"color\": \"black\",\r\n            \"size\": \"S\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/order/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllOrderByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/order/getAllByUserId/u123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"order",
+								"getAllByUserId",
+								"u123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteOrderByUserId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/order/deleteAllByUserId/u123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"order",
+								"deleteAllByUserId",
+								"u123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shopping",
+			"item": [
+				{
+					"name": "cart",
+					"item": [
+						{
+							"name": "GetAllCart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/shopping/cart/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"cart",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCartByUserId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/shopping/cart?userId=u123",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"cart"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "u123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddItemToCart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"u123\",\r\n    \"itemDTO\": {\r\n        \"productId\": \"p123\",\r\n        \"productName\": \"product name 123\",\r\n        \"productPhotoUrl\": \"this is photo url\",\r\n        \"color\": \"red\",\r\n        \"size\": \"29\",\r\n        \"quantity\": 10\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/shopping/addToCart",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"addToCart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateCartItemQuantity",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"u123\",\r\n    \"productVariantId\": \"ebc71613-d44c-4410-a1c2-ab7695a9f833\",\r\n    \"quantity\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/shopping/updateCartItemQuantity",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"updateCartItemQuantity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveItemFromCart",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"u123\",\r\n    \"productVariantId\": \"8cec0b41-0ea7-4134-a8db-ed0c065b7367\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/shopping/removeFromCart",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"removeFromCart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "wishlist",
+					"item": [
+						{
+							"name": "GetAllWishlist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/shopping/cart/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"cart",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetWishlistByUserId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/shopping/wishlist?userId=u123",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"wishlist"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "u123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveItemFromWishlist",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"u123\",\r\n    \"productId\": \"p123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/shopping/removeFromWishlist",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"removeFromWishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ToggleAddWishlistItem",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"u123\",\r\n    \"item\": {\r\n        \"productId\": \"p123\",\r\n        \"productName\": \"fake product Name\",\r\n        \"productPhotoUrl\": \"fake product photo url\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/shopping/toggleAddItemToWishlist",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"toggleAddItemToWishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CheckItemInWishlist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/shopping/checkItemInWishlist?userId=u123&productId=p123",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"shopping",
+										"checkItemInWishlist"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "u123"
+										},
+										{
+											"key": "productId",
+											"value": "p123"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "CreateCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"vay\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/product/category/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllCategories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/product/category/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCategoryById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/product/category/63a2a98806d2c7b052374f6e",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"63a2a98806d2c7b052374f6e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/product/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZDQyMjdlMi1jODQ5LTRkZDctYmZjOC1iNGI5ZjAyYTE2MzUiLCJ1c2VybmFtZSI6ImRvYW5odGh1Y2RuMDEiLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzM1MzgyNTcsImV4cCI6MTY3MzUzOTE1N30.a8UW65z75ZeURyPHUluCJE-cAM9fUX5iVh5efJ_Kam8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"vay nu 1\",\r\n    \"description\": \"product description line 1\\nproduct description line 2\\nproduct description line 3\",\r\n    \"basePrice\": 1000,\r\n    \"sellingPrice\": 900,\r\n    \"coverPhoto\": \"fake women skirt image url\",\r\n    \"photoUrls\": [\r\n        \"link 1\",\r\n        \"link 2\",\r\n        \"link 3\",\r\n        \"link 4\"\r\n    ],\r\n    \"categories\": [\"63e4a3c905b47a9aeddaad29\"],\r\n    \"productVariants\": [\r\n        {\r\n            \"color\": \"white\",\r\n            \"size\": \"S\",\r\n            \"quantity\": 90,\r\n            \"basePrice\": 1000,\r\n            \"sellingPrice\": 900\r\n        },\r\n        {\r\n            \"color\": \"white\",\r\n            \"size\": \"M\",\r\n            \"quantity\": 200,\r\n            \"basePrice\": 1500,\r\n            \"sellingPrice\": 1250\r\n        },\r\n        {\r\n            \"color\": \"white\",\r\n            \"size\": \"L\",\r\n            \"quantity\": 90,\r\n            \"basePrice\": 1000,\r\n            \"sellingPrice\": 900\r\n        }\r\n    ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/product/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"vay nu 1\",\r\n    \"description\": \"product description line 1\\nproduct description line 2\\nproduct description line 3\",\r\n    \"basePrice\": 1000,\r\n    \"sellingPrice\": 900,\r\n    \"coverPhoto\": \"fake women skirt image url\",\r\n    \"photoUrls\": [\r\n        \"link 1\",\r\n        \"link 2\",\r\n        \"link 3\",\r\n        \"link 4\"\r\n    ],\r\n    \"categories\": [\"63e4a3c905b47a9aeddaad29\"],\r\n    \"productVariants\": [\r\n        {\r\n            \"color\": \"white\",\r\n            \"size\": \"S\",\r\n            \"quantity\": 90,\r\n            \"basePrice\": 1000,\r\n            \"sellingPrice\": 900\r\n        },\r\n        {\r\n            \"color\": \"white\",\r\n            \"size\": \"M\",\r\n            \"quantity\": 200,\r\n            \"basePrice\": 1500,\r\n            \"sellingPrice\": 1250\r\n        }\r\n    ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/product/update/63e9efb54662c1606a9c0f40",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"product",
+								"update",
+								"63e9efb54662c1606a9c0f40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/product/delete/63e0a96f64ffe763df5b2c14",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								"63e0a96f64ffe763df5b2c14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": {\r\n        \"priceRange\": \"all\",\r\n        \"category\": [\"nam\"],\r\n        \"color\": [\"red\"],\r\n        \"size\": [\"S\"]\r\n    },\r\n    \"page\": 1,\r\n    \"pageSize\": 2,\r\n    \"orderBy\": \"basePrice\",\r\n    \"sortBy\": \"desc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/product/retrieveProduct",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"product",
+								"retrieveProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"searchTerm\": \"ao\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/product/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"product",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "GetRview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/review/getByProductId/63e4bc6105b47a9aeddaad2c",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"review",
+								"getByProductId",
+								"63e4bc6105b47a9aeddaad2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63e4c7a7d039cb529785ed97\",\r\n    \"productId\": \"63e4bc6105b47a9aeddaad2c\",\r\n    \"rating\": 5,\r\n    \"comment\": \"good product 2\",\r\n    \"userId\": \"u123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/review/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"review",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewOfUserForProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/review/reviewOfUserForProduct?productId=63e4bc6105b47a9aeddaad2c&userId=u123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"review",
+								"reviewOfUserForProduct"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "63e4bc6105b47a9aeddaad2c"
+								},
+								{
+									"key": "userId",
+									"value": "u123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReview",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 4,\r\n    \"comment\": \"good product 2 edit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/review/update/63e4c7a7d039cb529785ed97",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"review",
+								"update",
+								"63e4c7a7d039cb529785ed97"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "role",
+					"item": [
+						{
+							"name": "GetAllRole",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/role",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetRoleById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/role/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"role",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetRoleByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/role",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateRole",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CUSTOMER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/auth/role",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"role"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "GetAllUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/user/3f53e672-e5ae-4607-acea-11012b0b1df2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"user",
+										"3f53e672-e5ae-4607-acea-11012b0b1df2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/auth/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUserById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/user/3f53e672-e5ae-4607-acea-11012b0b1df2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"user",
+										"3f53e672-e5ae-4607-acea-11012b0b1df2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"doanhthucdn01\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"doanhthucdn01\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"doanhthuc@3005.gmail.com\",\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"gender\": \"MALE\",\r\n    \"avatarUrl\": \"fake avatar url\",\r\n\r\n    \"streetAddress\": \"02 Wall st\",\r\n    \"district\": \"Hai Chau\",\r\n    \"city\": \"Danang\",\r\n    \"country\": \"Vietnam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/auth/register",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "address",
+					"item": [
+						{
+							"name": "UpddateAddressOfUserWithAddressId",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"streetAddress\": \"02 Wall Street\",\r\n    \"district\": \"Hai Chau 1\",\r\n    \"city\": \"Da Nang\",\r\n    \"country\": \"Vietnam\",\r\n    \"zipCode\": \"5555000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/auth/address/0bee5879-9e6a-4fc2-a76c-992d050097b8",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"address",
+										"0bee5879-9e6a-4fc2-a76c-992d050097b8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAddressOfUserByUserId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/userAddress/3f53e672-e5ae-4607-acea-11012b0b1df2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"userAddress",
+										"3f53e672-e5ae-4607-acea-11012b0b1df2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllAddress",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/auth/address/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"address",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "discount",
+			"item": [
+				{
+					"name": "CreateDiscount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"discount product\",\r\n    \"startDate\": \"2023-01-22T22:01:00\",\r\n    \"endDate\": \"2023-01-22T22:12:00\",\r\n    \"type\": \"value\",\r\n    \"value\": 0.15,\r\n    \"listProductId\": [\"63cd4d49adfa955548f9a2fc\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7241/Discount",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7241",
+							"path": [
+								"Discount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http:localhost",
+			"type": "default"
+		}
+	]
+}

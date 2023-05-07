@@ -1,0 +1,25 @@
+image: hashicorp/terraform
+
+pipelines:
+  custom:
+    Deploy-to-prod-capstone-project:
+      - step:
+          name: Terraform plan for capstone project
+          script:
+            - cd aws-infra
+            - echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
+            - echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+            - echo "AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}"
+            - terraform init
+            - terraform plan -input=false
+      - step:
+          trigger: manual
+          name: Terraform apply (Manual)
+          script:
+            - cd aws-infra
+            - echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
+            - echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+            - echo "AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}"
+            - terraform init
+            - terraform plan -input=false
+            - terraform apply -auto-approve

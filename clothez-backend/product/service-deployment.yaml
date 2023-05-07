@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: product-service-deployment
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: product-service
+  template: 
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+        - name: product
+          image: docker.io/doanhthuc/product-service
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 3000
+          env:
+          - name: PORT
+            value: "3000"
+          - name: NODE_ENV
+            value: production
+          - name: MONGO_URI
+            value: mongodb://product-db:27017/
+          - name: MONGO_INITDB_DATABASE
+            value: fu-capstone-product
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: root
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: secret
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: product-service
+  # annotations:
+  #   service.beta.kubernetes.io/aws-load-balancer-type: nlb
+  #   service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+spec: 
+  selector:
+    app: product-service
+  ports:
+    # - name: port-1
+    #   protocol: TCP
+    #   port: 3000
+    #   targetPort: 3000
+    #   nodePort: 30000
+    - name: port-2
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP
