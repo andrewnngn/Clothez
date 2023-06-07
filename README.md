@@ -2,4 +2,4 @@
 
 - Team size: 3
 
-- Technologies: .Net, Expressjs, Java, React, Docker, K8s AWS
+- Technologies: .Net, Expressjs, Java, React, Docker, K8s, AWS
